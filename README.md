@@ -1,16 +1,21 @@
 # brijesh_scraper
-Please run following command
+For data scrap please clone this repo and run following command
 
 ```bash
 composer update
 ```
 
-Also please Note I am having issue with scraping the data for given websites, maybe there are some saftey issue with sites. With test sites in code I can see scrpaed data for others but not with given sites.
+This will install all dependency and to scrp data run project in localhost and use following url
 
-But the concept is clear and insert data is all about insert query.
+```bash
+localhost/brijesh_scraper/scrap
+```
 
-If you can give me couple of days more I can submit fully working demo on Moday.
+And to extract records from DB in CSV
 
+```bash
+localhost/brijesh_scraper/scrap/extractcsv
+```
 
 
 Thank you
