@@ -1,5 +1,6 @@
  <?php 
- 
+
+set_time_limit(12000);
 
 function load_class($clsName){
 	include_once "class/db.php";
@@ -8,14 +9,14 @@ function load_class($clsName){
 
 spl_autoload_register("load_class");
 
-$request = $_SERVER['QUERY_STRING'];
-
+$request = rtrim($_SERVER['QUERY_STRING'], '/');
 $expld = explode('/', $request);
 
-if(sizeof($expld) > 1){
+if( !empty($expld[0]) && sizeof($expld) >= 1){
 	$clsCalled = new $expld[0]();
-	if(sizeof($expld) > 2){
-		$clsCalled->$expld[1]();
+	if(sizeof($expld) >= 2){
+		$func = $expld[1];
+		$clsCalled->$func();
 	}
 	else{
 		$clsCalled->index();
